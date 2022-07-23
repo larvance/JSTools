@@ -381,7 +381,7 @@
      * @param {number | function(): number} width
      * @param {number | function(): number} height
      */
-    window.JSTools.handleCanvasResize = (canvas, width = window.innerWidth, height = window.innerHeight) => {
+    window.JSTools.handleCanvasResize = (canvas, width = () => window.innerWidth, height = () => window.innerHeight) => {
         const resize = () => {
             canvas.width = typeof width === "function" ? width() : width;
             canvas.height = typeof height === "function" ? height() : height;
